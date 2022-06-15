@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: hsl(256, 26%, 20%);
+    --secondary-bg: hsl(216, 30%, 68%);
+    --font-color: hsl(270, 9%, 17%);
+    --line: hsl(273, 4%, 51%);
+    --footer-bg: hsl(0, 0%, 98%);
+    --hd-font: 'DM Serif Display', serif;
+    --body-font: 'Karla', sans-serif;
+}
+
+body,
+.root-div {
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    font-size: 16px;
+    font-family: var(--body-font);
+}
+
+h1 {
+    font-family: var(--hd-font);
+    font-weight: 400;
+    font-size: 4.5rem;
+    position: relative;
+    line-height: 1;
+}
+
+h3 {
+    font-family: var(--hd-font);
+}
+
+header {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* Header */
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 1rem 0;
+}
+
+.logo,
+.nav-items,
+.plan-btn {
+    display: inline-block;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    list-style: none;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.plan-btn {
+    border: solid 1px var(--font-color);
+    padding: 0.4em 2em;
+    display: inline-block;
+}
+
+/* Intro */
+.intro {
+    background-color: var(--bg);
+    position: relative;
+    color: var(--footer-bg);
+}
+
+.intro .container {
+    position: relative;
+    top: 8em;
+    bottom: 4em;
+    /* height: 95vh; */
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.intro .container::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 15%;
+    border-top: 2px solid var(--line);
+}
+
+.intro-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start;
+    border: 2px solid transparent;
+}
+
+.intro-header {
+    color: var(--footer-bg);
+    margin-bottom: 0;
+}
+
+.intro .plan-btn {
+    border: 1px solid var(--footer-bg);
+    margin-bottom: 0;
+}
+
+.svg-right,
+.svg-left {
+    position: absolute;
+}
+
+.svg-right {
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.svg-left {
+    bottom: -50%;
+}
+
+/* Work */
+.work {
+    margin: 20em 0 10em 0;
+}
+
+.work .container {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.work .container::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 15%;
+    border-top: 2px solid var(--line);
+}
+
+.work-items {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 5rem;
+}
+
+.work-about {
+    background-color: var(--bg);
+    padding: 1em 5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.work-about h2 {
+    line-height: 1;
+    max-width: 53%;
+    font-weight: 400;
+    font-size: 3.5rem;
+    font-family: var(--hd-font);
+    /* border: solid; */
+    height: max-content;
+    color: var(--footer-bg)
+}
+
+.work-about .plan-btn {
+    color: var(--footer-bg);
+    border: 1px solid var(--footer-bg);
+    z-index: 1000;
+}
+
+.svg-work-about {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    padding: 1rem 0;
+    position: relative;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: var(--line) solid 1px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.footer ul, 
+small {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+small {
+    padding-bottom: 1.5rem;
+}
+
+.footer ul {
+    font-size: 0.9rem;
+    font-weight: bolder;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: .3rem
+}
+
+.svg-footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
