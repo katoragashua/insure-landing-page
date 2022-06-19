@@ -79,11 +79,20 @@ header .container {
     color: var(--font-color);
 }
 
+.nav-items a:hover {
+    border-bottom: 1px solid var(--bg);
+}
+
 .plan-btn {
     border: solid 1px var(--font-color);
     padding: 0.4em 2em;
     display: inline-block;
     text-decoration: none;
+}
+
+.plan-btn:hover {
+    background-color: var(--bg);
+    color: var(--footer-bg);
 }
 
 .hamburger {
@@ -133,6 +142,12 @@ header .container {
     margin-bottom: 0;
     color: var(--footer-bg)
 }
+
+.intro .plan-btn:hover {
+    background-color: var(--footer-bg);
+    color: var(--bg)
+}
+
 
 .svg-right,
 .svg-left {
@@ -201,6 +216,11 @@ header .container {
     border: 1px solid var(--footer-bg);
     z-index: 1000;
     text-transform: uppercase;
+}
+
+.work-about .plan-btn:hover {
+    color: var(--bg);
+    background-color: var(--footer-bg);
 }
 
 .svg-work-about {
@@ -308,7 +328,7 @@ header .container {
 
 .nav-items {
     justify-content: flex-start;
-    gap: 1.5em;
+    gap: 2.5em;
     background-color: rgba(255, 255, 255, 0.422);
     list-style: none;
     position: absolute;
@@ -510,7 +530,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1.8rem;
+    gap: 2rem;
     padding: 1.8rem 0;
     border-bottom: var(--line) solid 1px;
 }
