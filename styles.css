@@ -86,15 +86,9 @@ header .container {
     text-decoration: none;
 }
 
-/* Main */
-
-/* main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10em;
-    width: 100%;
-} */
+.hamburger {
+    display: none;
+}
 
 /* Intro */
 .intro {
@@ -105,16 +99,33 @@ header .container {
 
 .intro .container {
     position: relative;
+    top: 8em;
     bottom: 4em;
-    /* height: 95vh; */
     display: flex;
     justify-content: space-between;
     gap: 1em;
 }
 
+.intro .container::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    width: 15%;
+    border-top: 2px solid var(--line);
+}
+
 .intro-items {
+    display: flex;
     flex-direction: column;
-    
+    gap: 1em;
+    align-items: flex-start;
+    border: 2px solid transparent;
+}
+
+.intro-header {
+    color: var(--footer-bg);
+    margin-bottom: 0;
 }
 
 .intro .plan-btn {
@@ -181,7 +192,6 @@ header .container {
     font-weight: 400;
     font-size: 3.5rem;
     font-family: var(--hd-font);
-    /* border: solid; */
     height: max-content;
     color: var(--footer-bg)
 }
@@ -255,10 +265,14 @@ small {
     z-index: 1;
 }
 
+
+
 @media  screen and (max-width: 500px) {
 body,
 .root-div {
     text-align: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -267,6 +281,7 @@ h1 {
 
 header {
     margin: 0;
+    position: relative;
 }
 
 .container {
@@ -292,15 +307,34 @@ header .container {
 }
 
 .nav-items {
-    display: flex;
-    justify-content: space-between;
-    gap: 2em;
+    justify-content: flex-start;
+    gap: 1.5em;
+    background-color: rgba(255, 255, 255, 0.422);
     list-style: none;
+    position: absolute;
+    margin: 0;
+    top: 100%;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 1em;
+    right: -50%;
+}
+
+.slide-in {
+    transform: translateX(-50vw);
+    z-index: 100;
+    transition: all 1.5s ease;
+}
+
+.slide-out {
+    transform: translateX
 }
 
 .nav-items a {
-    text-decoration: none;
     color: var(--font-color);
+    overflow-x: hidden;
 }
 
 .plan-btn {
@@ -310,29 +344,36 @@ header .container {
     text-decoration: none;
 }
 
+nav .plan-btn {
+    display: none;
+}
+
+.hamburger {
+    display: inline-block;
+}
+
 /* Main */
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10em;
+    gap: em;
     width: 100%;
 }
 
 /* Intro */
 .intro {
-    background-color: var(--bg);
-    color: var(--footer-bg);
     width: 100%;
 }
 
 .intro .container {
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 1em;
-    position: relative;
+    top: 0;
     width: 100%;
+}
+
+.intro .container::before {
+    width: 0%;
 }
 
 
@@ -373,8 +414,7 @@ main {
 .svg-right-mobile {
     bottom: -11em;
     right: 0;
-    /* z-index: 1000; */
-     position: absolute;
+    position: absolute;
 }
 
 .svg-left-mobile {
@@ -384,6 +424,10 @@ main {
 }
 
 /* Work */
+.work {
+    margin: 14em 0 3em 0;
+}
+
 .work .container {
    position: relative;
    display: flex;
@@ -418,7 +462,6 @@ main {
     background-color: var(--bg);
     padding: 4em 2em;
     width: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -430,10 +473,8 @@ main {
 .work-about h2 {
     font-size: 2rem;
     line-height: 1;
-    font-weight: 400;
+    font-weight: 400; 
     font-family: var(--hd-font);
-    /* border: solid; */
-    height: max-content;
     color: var(--footer-bg)
 }
 
@@ -484,7 +525,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* padding: 2rem 0; */
     gap: 1rem;
     padding: 2rem 0;
 }
@@ -514,7 +554,7 @@ small {
     margin-bottom: .3rem
 }
 
-.svg-footer {
+.svg-footer-mobile {
     position: absolute;
     top: 0;
     left: 0;
